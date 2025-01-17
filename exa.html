@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+</head>
+<body>
+    <p>
+        select subject:
+    </p>
+    <select id="siva" onchange="hi()">
+        <option value ="Data structures">Data structures </option>
+        <option value ="java">java </option>
+        <option value ="python">python </option>
+
+    </select>
+    <p id="std"></p>
+    <script>
+        function hi(){
+            let x=document.getElementById("siva").value;
+            document.getElementById("std").innerHTML="selected course: "+x;
+        }
+    </script>
+</body>
+</html>

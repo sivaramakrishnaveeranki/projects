@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Digital clock</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .clock{
+            position: absolute;
+            color: lime;
+            top:40%;
+            left:35%;
+            font-size: 60px;
+            letter-spacing: 7px;
+        }      
+    </style> 
+</head>
+<body align="center">
+    <div id="digitalclock" class="clock"></div>
+    <script class="class">
+        function showtime()
+        {
+        var date=new Date();//IT GIVES CURRENT DATA
+        var h=date.getHours();
+        var m=date.getMinutes();
+        var s=date.getSeconds();
+        var ss="AM";
+        if(h==0)
+        {
+            h=12;//12 hour format
+        }
+        if(h>12)
+        {
+            h=h-12; //hours-12=answer(13-12=1)
+            ss="PM"
+        }
+        h=(h<10)?"0"+h:h;
+        m=(m<10)?"0"+m:m;
+        s=(s<10)?"0"+s:s;
+        document.getElementById("digitalclock").innerHTML=h+":"+m+":"+s+" "+ss;
+        setTimeout(showtime,1000);
+        }
+        showtime();
+    </script>
+</body>
+</html>
